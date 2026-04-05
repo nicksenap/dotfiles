@@ -1,0 +1,24 @@
+# theme="kaolin-dark"
+# theme="saime-black-warm"
+theme = "gruvbox"
+
+[editor]
+line-number="relative"
+bufferline="always"
+auto-format=false
+
+rulers=[80]
+popup-border="all"
+
+[editor.cursor-shape]
+insert="bar"
+select="underline"
+
+[editor.file-picker]
+hidden=false
+
+[keys.normal]
+"X" = "extend_line_above"
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]

@@ -1,0 +1,59 @@
+# Python Configuration
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+auto-format = true
+formatter = { command = "black", args = ["--quiet", "-"] }
+
+# Java Configuration  
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+auto-format = true
+formatter = { command = "google-java-format", args = ["-"] }
+
+# TypeScript Configuration
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+# SQL Configuration
+[[language]]
+name = "sql"
+language-servers = ["sqls"]
+formatter = { command = "sql-formatter", args = ["-l", "postgresql"] }
+
+# Language Server Definitions
+[language-server.pylsp]
+command = "pylsp"
+
+[language-server.pylsp.config.pylsp.plugins]
+pycodestyle = { maxLineLength = 88 }
+black = { enabled = true }
+pylsp_mypy = { enabled = true }
+
+[language-server.jdtls]
+command = "jdtls"
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.sqls]
+command = "sqls"
+
+[language-server.kotlin]
+command = "kotlin-lsp"
+args = [ "--stdio" ] 
+
+[[language]]
+name = "kotlin"
+language-servers = [ "kotlin" ]
