@@ -12,7 +12,7 @@ alias taskmaster = task-master
 # ── Custom commands ──────────────────────────────
 
 # cd into Obsidian vault
-def vault [] {
+def --env vault [] {
     cd "/Users/nicksenap/Library/Mobile Documents/iCloud~md~obsidian/Documents/Nick's Vault"
 }
 
