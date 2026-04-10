@@ -6,6 +6,7 @@ alias ll = ls
 alias mvn363 = ~/Lib/apache-maven-3.6.3/bin/mvn
 alias python = python3
 alias loco = claude --dangerously-skip-permissions
+alias lg = lazygit
 alias tm = task-master
 alias taskmaster = task-master
 

@@ -1,5 +1,5 @@
 home := env("HOME")
-packages := "aerospace atuin helix karabiner nushell yazi zellij zsh"
+packages := "aerospace alacritty atuin helix karabiner nushell yazi zellij zsh"
 plugin_dir := home / ".config/zellij/plugins"
 
 zjstatus_version := "v0.22.0"
@@ -46,6 +46,22 @@ plugins:
 deps:
     brew install stow starship atuin yazi helix zellij eza just
     brew install --cask nikitabobko/tap/aerospace
+
+# Set zellij default shell (zsh or nu)
+shell name:
+    #!/usr/bin/env bash
+    config="zellij/.config/zellij/config.kdl"
+    if [[ "{{ name }}" == "zsh" ]]; then
+        target=/bin/zsh
+    elif [[ "{{ name }}" == "nu" ]]; then
+        target=/opt/homebrew/bin/nu
+    else
+        echo "Usage: just shell [zsh|nu]"
+        exit 1
+    fi
+    sed -i '' 's|^default_shell ".*"|default_shell "'"$target"'"|' "$config"
+    echo "Zellij default shell set to $target"
+    echo "Restart zellij to apply"
 
 # Full setup: deps, stow, plugins
 setup: deps stow plugins

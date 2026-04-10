@@ -85,6 +85,7 @@ alias lt='ls --tree'
 alias mvn363='~/Lib/apache-maven-3.6.3/bin/mvn'
 alias python='python3'
 alias loco='claude --dangerously-skip-permissions'
+alias lg='lazygit'
 
 # Load completions only once
 autoload -U +X bashcompinit && bashcompinit
